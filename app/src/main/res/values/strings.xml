@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ADM-PR02-Exhange</string>
+    <string name="activity_main_btnExchange">Exchange</string>
+    <string name="activity_main_dollar">Dollar</string>
+    <string name="activity_main_euro">Euro</string>
+    <string name="activity_main_pound">Pound</string>
+    <string name="activity_main_lblFrom">From</string>
+    <string name="activity_main_lblTo">To</string>
+    <string name="activity_main_lblAmount">Amount</string>
 </resources>

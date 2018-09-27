@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="rdg_paddingLeft">24dp</dimen>
+    <dimen name="rdg_paddingBottom">8dp</dimen>
+    <dimen name="rdg_paddingTop">4dp</dimen>
+    <dimen name="btn_marginVertical">24dp</dimen>
+    <dimen name="img_margin">8dp</dimen>
+    <dimen name="llImg_marginLeft">124dp</dimen>
+    <dimen name="llImg_marginTop">8dp</dimen>
+    <dimen name="llImg_marginBottom">8dp</dimen>
+    <dimen name="lblrdg_marginLeft">16dp</dimen>
+    <dimen name="btn_marginTop">8dp</dimen>
+    <dimen name="lblAmount_margin">16dp</dimen>
+    <dimen name="txtAmount_marginVertical">16dp</dimen>
+    <dimen name="txtAmount_marginHorizontal">8dp</dimen>
+</resources>

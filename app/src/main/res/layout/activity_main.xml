@@ -9,71 +9,120 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/lblCantidad"
+        android:id="@+id/lblAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cantidad"
-        android:labelFor="@+id/txtCantidad" />
+        android:text="@string/activity_main_lblAmount"
+        android:labelFor="@+id/txtAmount"
+        android:layout_marginLeft="@dimen/lblAmount_margin"
+        android:layout_marginTop="@dimen/lblAmount_margin" />
     <EditText
-        android:id="@+id/txtCantidad"
+        android:id="@+id/txtAmount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal" />
-
-    <RadioGroup
-        android:id="@+id/rdgOrigin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <RadioButton
-            android:id="@+id/rdbOriginDolar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <RadioButton
-            android:id="@+id/rdbOriginEuro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <RadioButton
-            android:id="@+id/rdbOriginLibra"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </RadioGroup>
-    <RadioGroup
-        android:id="@+id/rdgDestino"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <RadioButton
-            android:id="@+id/rdbDestinoDolar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <RadioButton
-            android:id="@+id/rdbDestinoEuro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <RadioButton
-            android:id="@+id/rdbDestinoLibra"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </RadioGroup>
-    <LinearLayout
-        android:id="@+id/llImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/imgOrigin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageView
-            android:id="@+id/imgDestino"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <Button
-        android:id="@+id/btnMostrar"
+        android:inputType="numberDecimal"
+        android:layout_marginRight="@dimen/txtAmount_marginVertical"
+        android:layout_marginLeft="@dimen/txtAmount_marginVertical"
+        android:layout_marginBottom="@dimen/txtAmount_marginHorizontal"
+        android:paddingLeft="@dimen/txtAmount_marginHorizontal"/>
+    <TextView
+        android:id="@+id/lblFrom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mostrar" />
+        android:text="@string/activity_main_lblFrom"
+        android:labelFor="@+id/rdgFrom"
+        android:layout_marginLeft="@dimen/lblrdg_marginLeft"/>
+    <RadioGroup
+        android:id="@+id/rdgFrom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/rdg_paddingTop"
+        android:paddingBottom="@dimen/rdg_paddingBottom"
+        android:paddingLeft="@dimen/rdg_paddingLeft">
+        <RadioButton
+            android:id="@+id/rdbFromDollar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_main_dollar"/>
+        <RadioButton
+            android:id="@+id/rdbFromEuro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_main_euro"
+            android:checked="true"/>
+        <RadioButton
+            android:id="@+id/rdbFromPound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_main_pound"/>
+    </RadioGroup>
+    <TextView
+        android:id="@+id/lblTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_main_lblTo"
+        android:labelFor="@+id/rdgTo"
+        android:layout_marginLeft="@dimen/lblrdg_marginLeft"/>
+    <RadioGroup
+        android:id="@+id/rdgTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/rdg_paddingBottom"
+        android:paddingTop="@dimen/rdg_paddingTop"
+        android:paddingLeft="@dimen/rdg_paddingLeft">
+        <RadioButton
+            android:id="@+id/rdbToDollar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_main_dollar"
+            android:checked="true"/>
+        <RadioButton
+            android:id="@+id/rdbToEuro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_main_euro"
+            android:enabled="false"/>
+        <RadioButton
+            android:id="@+id/rdbToPound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_main_pound"
+            />
+    </RadioGroup>
+    <LinearLayout
+        android:id="@+id/llImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/llImg_marginLeft"
+        android:layout_marginTop="@dimen/llImg_marginTop"
+        android:layout_marginBottom="@dimen/llImg_marginBottom">
+        <ImageView
+            android:id="@+id/imgFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_iconmonstr_currency_euro_bold"
+            android:layout_marginRight="@dimen/img_margin"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_iconmonstr_arrow_17"/>
+        <ImageView
+            android:id="@+id/imgTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_iconmonstr_currency_dollar_bold"
+            android:layout_marginLeft="@dimen/img_margin"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnExchange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_main_btnExchange"
+        android:layout_marginTop="@dimen/btn_marginTop"
+        android:layout_marginLeft="@dimen/btn_marginVertical"
+        android:layout_marginRight="@dimen/btn_marginVertical"/>
+
 
 </LinearLayout>
