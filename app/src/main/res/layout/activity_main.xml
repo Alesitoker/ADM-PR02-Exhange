@@ -21,38 +21,41 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
+        android:gravity="end"
+        android:text="@string/activity_main_txtAmount_default_value"
+        android:selectAllOnFocus="true"
         android:layout_marginRight="@dimen/txtAmount_marginVertical"
         android:layout_marginLeft="@dimen/txtAmount_marginVertical"
-        android:layout_marginBottom="@dimen/txtAmount_marginHorizontal"
-        android:paddingLeft="@dimen/txtAmount_marginHorizontal"/>
+        android:layout_marginBottom="@dimen/txtAmount_marginHorizontal" />
     <TextView
         android:id="@+id/lblFrom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/activity_main_lblFrom"
-        android:labelFor="@+id/rdgFrom"
-        android:layout_marginLeft="@dimen/lblrdg_marginLeft"/>
+        android:labelFor="@+id/rgFrom"
+        android:layout_marginLeft="@dimen/lblrg_marginLeft"/>
     <RadioGroup
-        android:id="@+id/rdgFrom"
+        android:id="@+id/rgFrom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="@dimen/rdg_paddingTop"
-        android:paddingBottom="@dimen/rdg_paddingBottom"
-        android:paddingLeft="@dimen/rdg_paddingLeft">
+        android:paddingTop="@dimen/rg_paddingTop"
+        android:paddingBottom="@dimen/rg_paddingBottom"
+        android:paddingLeft="@dimen/rg_paddingLeft">
         <RadioButton
-            android:id="@+id/rdbFromDollar"
+            android:id="@+id/rbFromDollar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/activity_main_dollar"/>
+            android:text="@string/activity_main_dollar"
+            android:enabled="false"/>
         <RadioButton
-            android:id="@+id/rdbFromEuro"
+            android:id="@+id/rbFromEuro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/activity_main_euro"
             android:checked="true"/>
         <RadioButton
-            android:id="@+id/rdbFromPound"
+            android:id="@+id/rbFromPound"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/activity_main_pound"/>
@@ -62,30 +65,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/activity_main_lblTo"
-        android:labelFor="@+id/rdgTo"
-        android:layout_marginLeft="@dimen/lblrdg_marginLeft"/>
+        android:labelFor="@+id/rgTo"
+        android:layout_marginLeft="@dimen/lblrg_marginLeft"/>
     <RadioGroup
-        android:id="@+id/rdgTo"
+        android:id="@+id/rgTo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="@dimen/rdg_paddingBottom"
-        android:paddingTop="@dimen/rdg_paddingTop"
-        android:paddingLeft="@dimen/rdg_paddingLeft">
+        android:paddingBottom="@dimen/rg_paddingBottom"
+        android:paddingTop="@dimen/rg_paddingTop"
+        android:paddingLeft="@dimen/rg_paddingLeft">
         <RadioButton
-            android:id="@+id/rdbToDollar"
+            android:id="@+id/rbToDollar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/activity_main_dollar"
             android:checked="true"/>
         <RadioButton
-            android:id="@+id/rdbToEuro"
+            android:id="@+id/rbToEuro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/activity_main_euro"
             android:enabled="false"/>
         <RadioButton
-            android:id="@+id/rdbToPound"
+            android:id="@+id/rbToPound"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/activity_main_pound"
