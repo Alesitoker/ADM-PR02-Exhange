@@ -7,6 +7,6 @@
     <string name="activity_main_lblFrom">From</string>
     <string name="activity_main_lblTo">To</string>
     <string name="activity_main_lblAmount">Amount</string>
-    <string name="main_activity_exchange_message">%1$s%3$c = %2$.2f%4$c</string>
+    <string name="main_activity_exchange_message">%1$.2f%3$c = %2$.2f%4$c</string>
     <string name="activity_main_txtAmount_default_value">0.00</string>
 </resources>

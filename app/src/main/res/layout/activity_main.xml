@@ -105,7 +105,7 @@
             android:id="@+id/imgFrom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_iconmonstr_currency_euro_bold"
+            android:src="@drawable/ic_dollar"
             android:layout_marginRight="@dimen/img_margin"/>
         <ImageView
             android:layout_width="wrap_content"
@@ -115,7 +115,7 @@
             android:id="@+id/imgTo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_iconmonstr_currency_dollar_bold"
+            android:src="@drawable/ic_euro"
             android:layout_marginLeft="@dimen/img_margin"/>
     </LinearLayout>
     <Button

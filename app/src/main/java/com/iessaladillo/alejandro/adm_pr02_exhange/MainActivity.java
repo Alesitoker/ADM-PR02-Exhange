@@ -58,19 +58,19 @@ public class MainActivity extends AppCompatActivity {
             rbFromDollar.setEnabled(false);
             rbFromPound.setEnabled(true);
             rbFromEuro.setEnabled(true);
-            imgTo.setImageResource(R.drawable.ic_iconmonstr_currency_dollar_bold);
+            imgTo.setImageResource(R.drawable.ic_dollar);
         }
         else if (checkedId == rbToEuro.getId()) {
             rbFromEuro.setEnabled(false);
             rbFromPound.setEnabled(true);
             rbFromDollar.setEnabled(true);
-            imgTo.setImageResource(R.drawable.ic_iconmonstr_currency_euro_bold);
+            imgTo.setImageResource(R.drawable.ic_euro);
         }
         else if (checkedId == rbToPound.getId()) {
             rbFromPound.setEnabled(false);
             rbFromDollar.setEnabled(true);
             rbFromEuro.setEnabled(true);
-            imgTo.setImageResource(R.drawable.ic_iconmonstr_currency_pound_bold);
+            imgTo.setImageResource(R.drawable.ic_pound);
         }
     }
 
@@ -80,19 +80,19 @@ public class MainActivity extends AppCompatActivity {
             // Habilitamos los dos porque uno de ellos esta deshabilitado.
             rbToEuro.setEnabled(true);
             rbToPound.setEnabled(true);
-            imgFrom.setImageResource(R.drawable.ic_iconmonstr_currency_dollar_bold);
+            imgFrom.setImageResource(R.drawable.ic_dollar);
         }
         else if (checkedId == rbFromEuro.getId()) {
             rbToEuro.setEnabled(false);
             rbToDollar.setEnabled(true);
             rbToPound.setEnabled(true);
-            imgFrom.setImageResource(R.drawable.ic_iconmonstr_currency_euro_bold);
+            imgFrom.setImageResource(R.drawable.ic_euro);
         }
         else if (checkedId == rbFromPound.getId()) {
             rbToPound.setEnabled(false);
             rbToEuro.setEnabled(true);
             rbToDollar.setEnabled(true);
-            imgFrom.setImageResource(R.drawable.ic_iconmonstr_currency_pound_bold);
+            imgFrom.setImageResource(R.drawable.ic_pound);
         }
     }
 
@@ -101,6 +101,8 @@ public class MainActivity extends AppCompatActivity {
         char fromCurrency = ' ';
         char toCurrency;
         double resultado = 0, valor;
+        final char DOLLAR = '$', EURO = '€', POUND = '£';
+        final double DOLLAR_EURO = 0.861430, DOLLAR_POUND = 0.767491, EURO_DOLLAR = 1.16086, EURO_POUND = 0.890949, POUND_EURO = 1.12240, POUND_DOLLAR = 1.30297;
         try {
             valor  = Double.parseDouble(txtAmount.getText().toString());
         } catch (NumberFormatException e) {
@@ -110,41 +112,41 @@ public class MainActivity extends AppCompatActivity {
 
         switch (from) {
             case R.id.rbFromDollar:
-                fromCurrency = '$';
+                fromCurrency = DOLLAR;
                 if (to == R.id.rbToEuro) {
-                    resultado = 0.861430 * valor;
+                    resultado = DOLLAR_EURO * valor;
                 } else if (to == R.id.rbToPound) {
-                    resultado = 0.767491 * valor;
+                    resultado = DOLLAR_POUND * valor;
                 }
                 break;
             case R.id.rbFromEuro:
-                fromCurrency = '€';
+                fromCurrency = EURO;
                 if (to == R.id.rbToDollar) {
-                    resultado = 1.16086 * valor;
+                    resultado = EURO_DOLLAR * valor;
                 } else if (to == R.id.rbToPound) {
-                    resultado = 0.890949 * valor;
+                    resultado = EURO_POUND * valor;
                 }
                 break;
             case R.id.rbFromPound:
-                fromCurrency = '£';
+                fromCurrency = POUND;
                 if (to == R.id.rbToEuro) {
-                    resultado = 1.12240 * valor;
+                    resultado = POUND_EURO * valor;
                 } else if (to == R.id.rbToDollar) {
-                    resultado = 1.30297 * valor;
+                    resultado = POUND_DOLLAR * valor;
                 }
                 break;
         }
         switch (to) {
             case R.id.rbToEuro:
-                toCurrency = '€';
+                toCurrency = EURO;
                 break;
             case R.id.rbToDollar:
-                toCurrency = '$';
+                toCurrency = DOLLAR;
                 break;
             default:
-                toCurrency = '£';
+                toCurrency = POUND;
                 break;
         }
-        ToastUtils.toast(this, getString(R.string.main_activity_exchange_message, txtAmount.getText(), resultado, fromCurrency, toCurrency));
+        ToastUtils.toast(this, getString(R.string.main_activity_exchange_message, valor, resultado, fromCurrency, toCurrency));
 }
 }
