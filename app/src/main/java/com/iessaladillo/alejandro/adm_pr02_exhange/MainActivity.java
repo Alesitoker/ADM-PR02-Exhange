@@ -1,7 +1,5 @@
 package com.iessaladillo.alejandro.adm_pr02_exhange;
 
-import androidx.core.app.ActivityCompat;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,6 +8,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.iessaladillo.alejandro.adm_pr02_exhange.utils.ToastUtils;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
         rgFrom.setOnCheckedChangeListener((group, checkedId) -> changeFrom(checkedId));
         rgTo.setOnCheckedChangeListener((group, checkedId) -> changeTo(checkedId));
         btnExchange.setOnClickListener(v -> currencyConverter());
+
+        // SE AÑADEN PARA QUE PASE EL TEST. FÍJATE
+        imgFrom.setTag(R.drawable.ic_euro);
+        imgTo.setTag(R.drawable.ic_dollar);
     }
 
     private void changeTo(int checkedId) {
@@ -59,18 +64,24 @@ public class MainActivity extends AppCompatActivity {
             rbFromPound.setEnabled(true);
             rbFromEuro.setEnabled(true);
             imgTo.setImageResource(R.drawable.ic_dollar);
+            // SE AÑADE PARA QUE PASE EL TEST. FÍJATE
+            imgTo.setTag(R.drawable.ic_dollar);
         }
         else if (checkedId == rbToEuro.getId()) {
             rbFromEuro.setEnabled(false);
             rbFromPound.setEnabled(true);
             rbFromDollar.setEnabled(true);
             imgTo.setImageResource(R.drawable.ic_euro);
+            // SE AÑADE PARA QUE PASE EL TEST. FÍJATE
+            imgTo.setTag(R.drawable.ic_euro);
         }
         else if (checkedId == rbToPound.getId()) {
             rbFromPound.setEnabled(false);
             rbFromDollar.setEnabled(true);
             rbFromEuro.setEnabled(true);
             imgTo.setImageResource(R.drawable.ic_pound);
+            // SE AÑADE PARA QUE PASE EL TEST. FÍJATE
+            imgTo.setTag(R.drawable.ic_pound);
         }
     }
 
@@ -81,18 +92,24 @@ public class MainActivity extends AppCompatActivity {
             rbToEuro.setEnabled(true);
             rbToPound.setEnabled(true);
             imgFrom.setImageResource(R.drawable.ic_dollar);
+            // SE AÑADE PARA QUE PASE EL TEST. FÍJATE
+            imgFrom.setTag(R.drawable.ic_dollar);
         }
         else if (checkedId == rbFromEuro.getId()) {
             rbToEuro.setEnabled(false);
             rbToDollar.setEnabled(true);
             rbToPound.setEnabled(true);
             imgFrom.setImageResource(R.drawable.ic_euro);
+            // SE AÑADE PARA QUE PASE EL TEST. FÍJATE
+            imgFrom.setTag(R.drawable.ic_euro);
         }
         else if (checkedId == rbFromPound.getId()) {
             rbToPound.setEnabled(false);
             rbToEuro.setEnabled(true);
             rbToDollar.setEnabled(true);
             imgFrom.setImageResource(R.drawable.ic_pound);
+            // SE AÑADE PARA QUE PASE EL TEST. FÍJATE
+            imgFrom.setTag(R.drawable.ic_pound);
         }
     }
 
@@ -100,9 +117,12 @@ public class MainActivity extends AppCompatActivity {
         int from = rgFrom.getCheckedRadioButtonId(), to = rgTo.getCheckedRadioButtonId();
         char fromCurrency = ' ';
         char toCurrency;
+        // IN ENGLISH, PLEASE
         double resultado = 0, valor;
         final char DOLLAR = '$', EURO = '€', POUND = '£';
-        final double DOLLAR_EURO = 0.861430, DOLLAR_POUND = 0.767491, EURO_DOLLAR = 1.16086, EURO_POUND = 0.890949, POUND_EURO = 1.12240, POUND_DOLLAR = 1.30297;
+        // SE CAMBIAR EURO_DOLLAR A 1.17 PARA QUE PASE EL TEST
+        final double DOLLAR_EURO = 0.861430, DOLLAR_POUND = 0.767491, EURO_DOLLAR = 1.17,
+                EURO_POUND = 0.890949, POUND_EURO = 1.12240, POUND_DOLLAR = 1.30297;
         try {
             valor  = Double.parseDouble(txtAmount.getText().toString());
         } catch (NumberFormatException e) {
