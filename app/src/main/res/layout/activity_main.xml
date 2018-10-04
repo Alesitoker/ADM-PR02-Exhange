@@ -8,6 +8,9 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <!-- Usa marginStart en vez de marginLeft.
+     En general en todas los atributos que tengan left usa mejor start
+     y en todos los que tengan right usa mejor end -->
     <TextView
         android:id="@+id/lblAmount"
         android:layout_width="wrap_content"
